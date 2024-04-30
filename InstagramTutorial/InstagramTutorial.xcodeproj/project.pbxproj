@@ -11,6 +11,7 @@
 		E8F9C4F72BE0B08A002EC81D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F9C4F62BE0B08A002EC81D /* ContentView.swift */; };
 		E8F9C4F92BE0B08D002EC81D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8F9C4F82BE0B08D002EC81D /* Assets.xcassets */; };
 		E8F9C4FC2BE0B08D002EC81D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8F9C4FB2BE0B08D002EC81D /* Preview Assets.xcassets */; };
+		E8F9C5102BE0B4AE002EC81D /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F9C50F2BE0B4AE002EC81D /* MainTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		E8F9C4F62BE0B08A002EC81D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E8F9C4F82BE0B08D002EC81D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8F9C4FB2BE0B08D002EC81D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E8F9C50F2BE0B4AE002EC81D /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +95,7 @@
 				E8F9C50B2BE0B2AF002EC81D /* Root */,
 				E8F9C50A2BE0B2A1002EC81D /* Profile */,
 				E8F9C50C2BE0B2C7002EC81D /* Search */,
-				E8F9C50D2BE0B308002EC81D /* Tapbar */,
+				E8F9C50D2BE0B308002EC81D /* Tabbar */,
 				E8F9C50E2BE0B325002EC81D /* UploadPost */,
 			);
 			path = Core;
@@ -149,11 +151,12 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
-		E8F9C50D2BE0B308002EC81D /* Tapbar */ = {
+		E8F9C50D2BE0B308002EC81D /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
+				E8F9C50F2BE0B4AE002EC81D /* MainTabView.swift */,
 			);
-			path = Tapbar;
+			path = Tabbar;
 			sourceTree = "<group>";
 		};
 		E8F9C50E2BE0B325002EC81D /* UploadPost */ = {
@@ -235,6 +238,7 @@
 			files = (
 				E8F9C4F72BE0B08A002EC81D /* ContentView.swift in Sources */,
 				E8F9C4F52BE0B08A002EC81D /* InstagramTutorialApp.swift in Sources */,
+				E8F9C5102BE0B4AE002EC81D /* MainTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
