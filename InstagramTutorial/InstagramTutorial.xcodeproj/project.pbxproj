@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E89087562BE216BE000AA2B4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89087552BE216BE000AA2B4 /* LoginView.swift */; };
-		E89087582BE224D7000AA2B4 /* AddEamilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89087572BE224D7000AA2B4 /* AddEamilView.swift */; };
+		E89087582BE224D7000AA2B4 /* AddEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89087572BE224D7000AA2B4 /* AddEmailView.swift */; };
 		E890875A2BE2271C000AA2B4 /* IGTextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89087592BE2271C000AA2B4 /* IGTextFieldModifier.swift */; };
 		E890875C2BE22824000AA2B4 /* CreateUsernameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E890875B2BE22824000AA2B4 /* CreateUsernameView.swift */; };
 		E890875E2BE2311E000AA2B4 /* CreatePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E890875D2BE2311E000AA2B4 /* CreatePasswordView.swift */; };
@@ -27,7 +27,7 @@
 
 /* Begin PBXFileReference section */
 		E89087552BE216BE000AA2B4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		E89087572BE224D7000AA2B4 /* AddEamilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEamilView.swift; sourceTree = "<group>"; };
+		E89087572BE224D7000AA2B4 /* AddEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmailView.swift; sourceTree = "<group>"; };
 		E89087592BE2271C000AA2B4 /* IGTextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGTextFieldModifier.swift; sourceTree = "<group>"; };
 		E890875B2BE22824000AA2B4 /* CreateUsernameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUsernameView.swift; sourceTree = "<group>"; };
 		E890875D2BE2311E000AA2B4 /* CreatePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordView.swift; sourceTree = "<group>"; };
@@ -143,7 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				E89087552BE216BE000AA2B4 /* LoginView.swift */,
-				E89087572BE224D7000AA2B4 /* AddEamilView.swift */,
+				E89087572BE224D7000AA2B4 /* AddEmailView.swift */,
 				E890875B2BE22824000AA2B4 /* CreateUsernameView.swift */,
 				E890875D2BE2311E000AA2B4 /* CreatePasswordView.swift */,
 				E890875F2BE23CA9000AA2B4 /* CompletsSignUpView.swift */,
@@ -278,7 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8F9C5192BE0E238002EC81D /* FeedCell.swift in Sources */,
-				E89087582BE224D7000AA2B4 /* AddEamilView.swift in Sources */,
+				E89087582BE224D7000AA2B4 /* AddEmailView.swift in Sources */,
 				E8F9C5122BE0B63A002EC81D /* ProfileView.swift in Sources */,
 				E8F9C4F72BE0B08A002EC81D /* ContentView.swift in Sources */,
 				E89087562BE216BE000AA2B4 /* LoginView.swift in Sources */,

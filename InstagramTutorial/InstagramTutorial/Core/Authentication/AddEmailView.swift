@@ -7,7 +7,7 @@
 
 import SwiftUI
 import UIKit
-struct AddEamilView: View {
+struct AddEmailView: View {
     @State private var email = ""
     @Environment(\.dismiss) var dismiss
     
@@ -75,5 +75,5 @@ struct AddEamilView: View {
 }
 
 #Preview {
-    AddEamilView()
+    AddEmailView()
 }

@@ -84,7 +84,7 @@ struct LoginView: View {
                 Divider()
                 
                 NavigationLink {
-                    AddEamilView()
+                    AddEmailView()
                         .navigationBarBackButtonHidden(true)
                 } label: {
                     HStack(spacing: 3) {
