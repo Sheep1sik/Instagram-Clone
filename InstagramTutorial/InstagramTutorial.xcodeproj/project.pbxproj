@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E89087562BE216BE000AA2B4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89087552BE216BE000AA2B4 /* LoginView.swift */; };
 		E8F9C4F52BE0B08A002EC81D /* InstagramTutorialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F9C4F42BE0B08A002EC81D /* InstagramTutorialApp.swift */; };
 		E8F9C4F72BE0B08A002EC81D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F9C4F62BE0B08A002EC81D /* ContentView.swift */; };
 		E8F9C4F92BE0B08D002EC81D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8F9C4F82BE0B08D002EC81D /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E89087552BE216BE000AA2B4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E8F9C4F12BE0B08A002EC81D /* InstagramTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8F9C4F42BE0B08A002EC81D /* InstagramTutorialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramTutorialApp.swift; sourceTree = "<group>"; };
 		E8F9C4F62BE0B08A002EC81D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 		E8F9C5082BE0B246002EC81D /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				E89087552BE216BE000AA2B4 /* LoginView.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				E8F9C5192BE0E238002EC81D /* FeedCell.swift in Sources */,
 				E8F9C5122BE0B63A002EC81D /* ProfileView.swift in Sources */,
 				E8F9C4F72BE0B08A002EC81D /* ContentView.swift in Sources */,
+				E89087562BE216BE000AA2B4 /* LoginView.swift in Sources */,
 				E8F9C4F52BE0B08A002EC81D /* InstagramTutorialApp.swift in Sources */,
 				E8F9C51B2BE0EB9C002EC81D /* SearchView.swift in Sources */,
 				E8F9C5152BE0BC37002EC81D /* UserStatView.swift in Sources */,
