@@ -24,5 +24,5 @@ struct UserStatView: View {
 }
 
 #Preview {
-    UserStatView(value: 20, title: "Posts")
+    UserStatView(value: 20, title: "게시물")
 }

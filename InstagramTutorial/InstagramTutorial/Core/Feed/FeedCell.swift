@@ -65,7 +65,7 @@ struct FeedCell: View {
             .foregroundColor(.black)
             
             // likes label
-            Text("23 likes")
+            Text("b2_iiin님 외 23명이 좋아합니다")
                 .font(.footnote)
                 .fontWeight(.semibold)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -83,7 +83,7 @@ struct FeedCell: View {
             .padding(.top, 1)
             .font(.footnote)
             
-            Text("6h age")
+            Text("6시간 전")
                 .font(.footnote)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.leading, 8)

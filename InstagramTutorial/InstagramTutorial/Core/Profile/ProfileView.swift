@@ -31,18 +31,18 @@ struct ProfileView: View {
                         Spacer()
                         
                         HStack(spacing: 8, content: {
-                            UserStatView(value: 3, title: "Posts")
+                            UserStatView(value: 3, title: "게시물")
                             
-                            UserStatView(value: 654, title: "Followers")
+                            UserStatView(value: 654, title: "팔로워")
                             
-                            UserStatView(value: 1, title: "Following")
+                            UserStatView(value: 1, title: "팔로잉")
                         }) //: HSTACK
                     } //: HSTACK
                     .padding(.horizontal)
                     
                     // name and bio
                     VStack(alignment: .leading, content: {
-                        Text("Sheep1sik")
+                        Text("양원식")
                             .font(.footnote)
                             .fontWeight(.semibold)
                         
@@ -57,15 +57,14 @@ struct ProfileView: View {
                     Button {
                         
                     } label: {
-                        Text("Edit Profile")
-                            .font(.subheadline)
-                            .fontWeight(.semibold)
+                        RoundedRectangle(cornerRadius: 6)
+                            .foregroundColor(Color(.systemGray5))
                             .frame(width: 360, height: 32)
-                            .foregroundColor(.black)
-                            .overlay(content: {
-                                RoundedRectangle(cornerRadius: 6)
-                                    .stroke(Color.gray, lineWidth: 1)
-                            })
+                            .overlay {
+                                Text("프로필 편집")
+                                    .font(.subheadline)
+                                    .foregroundColor(.black)
+                            }
                     } //: BUTTON
                     
                     Divider()
@@ -85,8 +84,6 @@ struct ProfileView: View {
                 })
                 
             } //: SCROLL
-            .navigationTitle("Profile")
-            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing, content: {
                     Button(action: {}, label: {
@@ -94,7 +91,15 @@ struct ProfileView: View {
                             .foregroundColor(.black)
                     })
                 })
+                
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Text("sheep1sik")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                }
             }
+            
+            
         } //: NAVIGATION
     }
 }

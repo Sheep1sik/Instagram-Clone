@@ -22,29 +22,20 @@ struct LoginView: View {
                     .frame(width: 220, height: 100)
                 
                 VStack {
-                    TextField("Enter your email", text: $email)
+                    TextField("전화번호, 이메일, 사용자 이름", text: $email)
                         .autocapitalization(.none)
-                        .font(.subheadline)
-                        .padding(12)
-                        .background(Color(.systemGray6))
-                        .cornerRadius(10)
-                        .padding(.horizontal, 24)
+                        .modifier(IGTextFieldModifier())
                     
-                    TextField("Enter your password", text: $password)
-                        .font(.subheadline)
-                        .padding(12)
-                        .background(Color(.systemGray6))
-                        .cornerRadius(10)
-                        .padding(.horizontal, 24)
+                    SecureField("비밀번호", text: $password)
+                        .modifier(IGTextFieldModifier())
                     
                 } //: VSTACK
                 
                 Button {
                     print("Show forgot password")
                 } label: {
-                    Text("Forgot Password?")
+                    Text("비밀번호를 잊으셨나요?")
                         .font(.footnote)
-                        .fontWeight(.semibold)
                         .padding(.top)
                         .padding(.trailing, 28)
                 }
@@ -53,7 +44,7 @@ struct LoginView: View {
                 Button {
                     print("Login")
                 } label: {
-                    Text("Login")
+                    Text("로그인")
                         .font(.subheadline)
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
@@ -81,7 +72,7 @@ struct LoginView: View {
                         .resizable()
                         .frame(width: 20,height: 20)
                     
-                    Text("Continue with Facebook")
+                    Text("Facebook으로 로그인")
                         .font(.footnote)
                         .fontWeight(.semibold)
                         .foregroundColor(Color(.systemBlue))
@@ -93,12 +84,14 @@ struct LoginView: View {
                 Divider()
                 
                 NavigationLink {
-                    Text("Sign up")
+                    AddEamilView()
+                        .navigationBarBackButtonHidden(true)
                 } label: {
                     HStack(spacing: 3) {
-                        Text("Don't have an account?")
+                        Text("계정이 없으신가요?")
+                            .foregroundColor(Color(.systemGray))
                         
-                        Text("Sign Up")
+                        Text("가입하기")
                             .fontWeight(.semibold)
                     }
                     .font(.footnote)

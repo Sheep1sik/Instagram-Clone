@@ -44,10 +44,8 @@ struct SearchView: View {
                     } //: LOOP
                 } //: LAZY
                 .padding(.top, 8)
-                .searchable(text: $searchText, prompt: "Search...")
+                .searchable(text: $searchText, prompt: "검색")
             } //: SCROLL
-            .navigationTitle("Explore")
-            .navigationBarTitleDisplayMode(.inline)
         } //: NAVIGATION
     }
 }

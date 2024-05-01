@@ -18,13 +18,18 @@ struct FeedView: View {
                 } //: LAZY
                 .padding(.top, 8)
             } //: SCROLL
-            .navigationTitle("Feed")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Image("Instagram_logo")
                         .resizable()
-                        .frame(width: 100, height: 32)
+                        .frame(width: 120, height: 45)
+                }
+                
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Image(systemName: "heart")
+                        .imageScale(.large)
+                        .padding(.trailing, 10)
                 }
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
