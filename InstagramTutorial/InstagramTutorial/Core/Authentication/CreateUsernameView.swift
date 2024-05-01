@@ -10,6 +10,7 @@ import SwiftUI
 struct CreateUsernameView: View {
     @State private var username = ""
     @Environment(\.dismiss) var dismiss
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         VStack(spacing: 12) {
@@ -45,6 +46,7 @@ struct CreateUsernameView: View {
             .padding(.vertical)
             
             Spacer()
+            
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {

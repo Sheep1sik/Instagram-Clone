@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import UIKit
 struct AddEamilView: View {
     @State private var email = ""
     @Environment(\.dismiss) var dismiss
@@ -18,7 +18,7 @@ struct AddEamilView: View {
                 .fontWeight(.bold)
                 .padding(.top)
             
-            Text("해당 이메일을 사용하여 계정에 로그인합니다")
+            Text("해당 이메일을 사용하여 계정에 로그인합니다.")
                 .font(.footnote)
                 .foregroundColor(.gray)
                 .multilineTextAlignment(.center)
@@ -44,6 +44,23 @@ struct AddEamilView: View {
             .padding(.vertical)
             
             Spacer()
+            
+            Divider()
+            
+            Button {
+                dismiss()
+            } label: {
+                HStack(spacing: 3) {
+                    Text("이미 계정이 있으신가요?")
+                        .foregroundColor(Color(.systemGray))
+                    
+                    Text("로그인하기")
+                        .foregroundColor(.black)
+                        .fontWeight(.semibold)
+                }
+                .font(.footnote)
+            }
+            .padding(.vertical, 16)
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
