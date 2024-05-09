@@ -46,7 +46,7 @@ struct ProfileView: View {
                             .font(.footnote)
                             .fontWeight(.semibold)
                         
-                        Text("Aspiring iOS Developer")
+                        Text("iOS Developer")
                             .font(.footnote)
                     }) //: VSTACK
                     .frame(maxWidth: .infinity, alignment: .leading)

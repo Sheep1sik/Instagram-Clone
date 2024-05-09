@@ -21,20 +21,22 @@ struct SearchView: View {
                     } //: HSTACK
                     .padding(.horizontal)
                     .padding(.bottom, 10)
-                    ForEach(0 ... 15, id: \.self) { user in
+                    ForEach(User.MOCK_USERS) { user in
                         HStack {
-                            Image("User_b2_iiin")
+                            Image(user.profileImageUrl ?? "")
                                 .resizable()
                                 .scaledToFill()
                                 .frame(width: 40, height: 40)
                             .clipShape(Circle())
                             
                             VStack(alignment: .leading) {
-                                Text("b2_iiin")
+                                Text(user.username)
                                     .fontWeight(.semibold)
                                 
-                                Text("서빈 • sheep1sik님 외 4명이 팔로우합니다")
-                                    .foregroundColor(.gray)
+                                if let fullname = user.fullname {
+                                    Text(fullname)
+                                        .foregroundColor(.gray)
+                                }
                             } //: VSTACK
                             .font(.footnote)
                             
