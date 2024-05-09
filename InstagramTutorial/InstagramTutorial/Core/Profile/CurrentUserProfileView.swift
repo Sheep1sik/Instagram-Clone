@@ -1,15 +1,13 @@
 //
-//  ProfileView.swift
+//  CurrentUserProfileView.swift
 //  InstagramTutorial
 //
-//  Created by 양원식 on 4/30/24.
+//  Created by 양원식 on 5/9/24.
 //
 
 import SwiftUI
 
-struct ProfileView: View {
-    
-    let user: User
+struct CurrentUserProfileView: View {
     
     private let gridItems: [GridItem] = [
         .init(.flexible(), spacing: 1),
@@ -18,12 +16,13 @@ struct ProfileView: View {
     ]
     
     var body: some View {
+        NavigationStack {
             ScrollView {
                 // header
                 VStack(spacing: 10) {
                     // pic and stats
                     HStack {
-                        Image(user.profileImageUrl ?? "")
+                        Image("Profile")
                             .resizable()
                             .scaledToFill()
                             .frame(width: 80, height: 80)
@@ -43,56 +42,39 @@ struct ProfileView: View {
                     
                     // name and bio
                     VStack(alignment: .leading, content: {
-                        if let fullname = user.fullname {
-                            Text(fullname)
-                                .font(.footnote)
-                                .fontWeight(.semibold)
-                        }
-                        if let bio = user.bio {
-                            Text(bio)
-                                .font(.footnote)
-                        }
+                        Text("양원식")
+                            .font(.footnote)
+                            .fontWeight(.semibold)
+                        
+                        Text("iOS Developer")
+                            .font(.footnote)
                     }) //: VSTACK
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal)
                     
                     // action button
                     
-                    HStack {
-                        Button {
-                            
-                        } label: {
-                            RoundedRectangle(cornerRadius: 6)
-                                .foregroundColor(Color(.systemBlue))
-                                .frame(width: 180, height: 32)
-                                .overlay {
-                                    Text("팔로우")
-                                        .font(.subheadline)
-                                        .fontWeight(.bold)
-                                        .foregroundColor(.white)
-                                }
-                        } //: BUTTON
-                        Button {
-                            
-                        } label: {
-                            RoundedRectangle(cornerRadius: 6)
-                                .foregroundColor(Color(.systemGray5))
-                                .frame(width: 180, height: 32)
-                                .overlay {
-                                    Text("메시지")
-                                        .font(.subheadline)
-                                        .foregroundColor(.black)
-                                }
-                        } //: BUTTON
-                    }
+                    Button {
+                        
+                    } label: {
+                        RoundedRectangle(cornerRadius: 6)
+                            .foregroundColor(Color(.systemGray5))
+                            .frame(width: 360, height: 32)
+                            .overlay {
+                                Text("프로필 편집")
+                                    .font(.subheadline)
+                                    .foregroundColor(.black)
+                            }
+                    } //: BUTTON
+                    
                     Divider()
                 } //: VSTACK
                 
                 // post grid view
                 
                 LazyVGrid(columns: gridItems, spacing: 1, content: {
-                    ForEach(0 ... 3, id: \.self) { index in
-                        Image(user.profileImageUrl ?? "")
+                    ForEach(0 ... 15, id: \.self) { index in
+                        Image("Profile")
                             .resizable()
                             .aspectRatio(1, contentMode: .fill)
                             .frame(maxWidth: .infinity)
@@ -102,8 +84,6 @@ struct ProfileView: View {
                 })
                 
             } //: SCROLL
-            .navigationTitle(user.username)
-            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing, content: {
                     Button(action: {}, label: {
@@ -111,11 +91,19 @@ struct ProfileView: View {
                             .foregroundColor(.black)
                     })
                 })
+                
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Text("sheep1sik")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                }
             }
             .padding(.top, 10)
+            
+            
+        } //: NAVIGATION
     }
 }
-
 #Preview {
-    ProfileView(user: User.MOCK_USERS[1])
+    CurrentUserProfileView()
 }

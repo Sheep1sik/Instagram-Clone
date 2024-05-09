@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E83A407B2BEC962300F16458 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A407A2BEC962300F16458 /* User.swift */; };
+		E83A407D2BEC9B8900F16458 /* CurrentUserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A407C2BEC9B8900F16458 /* CurrentUserProfileView.swift */; };
 		E89087562BE216BE000AA2B4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89087552BE216BE000AA2B4 /* LoginView.swift */; };
 		E89087582BE224D7000AA2B4 /* AddEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89087572BE224D7000AA2B4 /* AddEmailView.swift */; };
 		E890875A2BE2271C000AA2B4 /* IGTextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89087592BE2271C000AA2B4 /* IGTextFieldModifier.swift */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		E83A407A2BEC962300F16458 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E83A407C2BEC9B8900F16458 /* CurrentUserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserProfileView.swift; sourceTree = "<group>"; };
 		E89087552BE216BE000AA2B4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E89087572BE224D7000AA2B4 /* AddEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmailView.swift; sourceTree = "<group>"; };
 		E89087592BE2271C000AA2B4 /* IGTextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGTextFieldModifier.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				E8F9C5112BE0B63A002EC81D /* ProfileView.swift */,
+				E83A407C2BEC9B8900F16458 /* CurrentUserProfileView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				E8F9C5122BE0B63A002EC81D /* ProfileView.swift in Sources */,
 				E8F9C4F72BE0B08A002EC81D /* ContentView.swift in Sources */,
 				E89087562BE216BE000AA2B4 /* LoginView.swift in Sources */,
+				E83A407D2BEC9B8900F16458 /* CurrentUserProfileView.swift in Sources */,
 				E8F9C4F52BE0B08A002EC81D /* InstagramTutorialApp.swift in Sources */,
 				E890875C2BE22824000AA2B4 /* CreateUsernameView.swift in Sources */,
 				E89087602BE23CA9000AA2B4 /* CompletsSignUpView.swift in Sources */,
