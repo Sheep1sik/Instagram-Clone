@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SearchView: View {
     @State private var searchText = ""
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         NavigationStack {
@@ -53,6 +54,15 @@ struct SearchView: View {
             } //: SCROLL
             .navigationDestination(for: User.self, destination: { user in
                 ProfileView(user: user)
+                    .navigationBarBackButtonHidden()
+                    .navigationBarItems(leading:
+                        Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Image(systemName: "chevron.left")
+                            .imageScale(.large)
+                            .foregroundColor(.black)
+                    })
             })
         } //: NAVIGATION
     }

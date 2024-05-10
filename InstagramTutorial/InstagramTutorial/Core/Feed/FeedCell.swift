@@ -8,19 +8,23 @@
 import SwiftUI
 
 struct FeedCell: View {
+    let post: Post
+    
     var body: some View {
         VStack {
             // image + username
             HStack {
-                Image("Post1")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 40, height: 40)
-                    .clipShape(Circle())
-                
-                Text("Sheep1sik")
-                    .font(.footnote)
-                    .fontWeight(.semibold)
+                if let user = post.user {
+                    Image(user.profileImageUrl ?? "")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 40, height: 40)
+                        .clipShape(Circle())
+                    
+                    Text(user.username)
+                        .font(.footnote)
+                        .fontWeight(.semibold)
+                }
                 
                 Spacer()
                 
@@ -29,7 +33,7 @@ struct FeedCell: View {
             
             // post image
             
-            Image("Post2")
+            Image(post.imageUrl)
                 .resizable()
                 .scaledToFill()
                 .frame(height: 400)
@@ -43,14 +47,14 @@ struct FeedCell: View {
                     Image(systemName: "heart")
                         .imageScale(.large)
                 })
-                
-                Button(action: {
-                    print("Comment on post")
-                }, label: {
-                    Image(systemName: "bubble.right")
-                        .imageScale(.large)
-                })
-                
+                if post.commentsEnabled {
+                    Button(action: {
+                        print("Comment on post")
+                    }, label: {
+                        Image(systemName: "bubble.right")
+                            .imageScale(.large)
+                    })
+                }
                 Button(action: {
                     print("Share post")
                 }, label: {
@@ -64,19 +68,23 @@ struct FeedCell: View {
             .padding(.top, 4)
             .foregroundColor(.black)
             
-            // likes label
-            Text("b2_iiin님 외 23명이 좋아합니다")
-                .font(.footnote)
-                .fontWeight(.semibold)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.leading, 8)
-                .padding(.top, 1)
-            
+            HStack {
+                // likes label
+                Text("\(post.commentsEnabled ? String(post.likes) : "여러")명")
+                    .font(.footnote)
+                    .fontWeight(.semibold)
+                +
+                Text("이 좋아합니다.")
+                    .font(.footnote)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.leading, 8)
+            .padding(.top, 1)
             // caption label
             
             HStack {
-                Text("Sheep1sik").fontWeight(.semibold) +
-                Text(" 쁘이 ✌🏻")
+                Text("\(post.user?.username ?? "") ").fontWeight(.semibold) +
+                Text(post.caption ?? "")
             } //: HSTACK
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.leading, 8)
@@ -95,5 +103,5 @@ struct FeedCell: View {
 }
 
 #Preview {
-    FeedCell()
+    FeedCell(post: Post.MOCK_POSTS[0])
 }
