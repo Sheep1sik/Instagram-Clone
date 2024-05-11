@@ -14,6 +14,12 @@
 		E83A40842BECCB4F00F16458 /* UserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A40832BECCB4F00F16458 /* UserProfileViewModel.swift */; };
 		E83A40862BECCED500F16458 /* PostGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A40852BECCED500F16458 /* PostGridView.swift */; };
 		E83A40882BEDFE5E00F16458 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A40872BEDFE5E00F16458 /* ProfileHeaderView.swift */; };
+		E83A408A2BEE002900F16458 /* ImageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A40892BEE002900F16458 /* ImageSelectionView.swift */; };
+		E83A408C2BEE052B00F16458 /* UploadPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A408B2BEE052B00F16458 /* UploadPostView.swift */; };
+		E83A40942BEE2E6400F16458 /* UploadPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A40932BEE2E6400F16458 /* UploadPostViewModel.swift */; };
+		E83A40962BEE3C6C00F16458 /* PhotoLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A40952BEE3C6C00F16458 /* PhotoLibraryView.swift */; };
+		E83A40992BEE3ECF00F16458 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E83A40982BEE3ECF00F16458 /* Photos.framework */; };
+		E83A409B2BEE400500F16458 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A409A2BEE400500F16458 /* PhotoView.swift */; };
 		E89087562BE216BE000AA2B4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89087552BE216BE000AA2B4 /* LoginView.swift */; };
 		E89087582BE224D7000AA2B4 /* AddEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89087572BE224D7000AA2B4 /* AddEmailView.swift */; };
 		E890875A2BE2271C000AA2B4 /* IGTextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89087592BE2271C000AA2B4 /* IGTextFieldModifier.swift */; };
@@ -40,6 +46,12 @@
 		E83A40832BECCB4F00F16458 /* UserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewModel.swift; sourceTree = "<group>"; };
 		E83A40852BECCED500F16458 /* PostGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGridView.swift; sourceTree = "<group>"; };
 		E83A40872BEDFE5E00F16458 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		E83A40892BEE002900F16458 /* ImageSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectionView.swift; sourceTree = "<group>"; };
+		E83A408B2BEE052B00F16458 /* UploadPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostView.swift; sourceTree = "<group>"; };
+		E83A40932BEE2E6400F16458 /* UploadPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostViewModel.swift; sourceTree = "<group>"; };
+		E83A40952BEE3C6C00F16458 /* PhotoLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryView.swift; sourceTree = "<group>"; };
+		E83A40982BEE3ECF00F16458 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		E83A409A2BEE400500F16458 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		E89087552BE216BE000AA2B4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E89087572BE224D7000AA2B4 /* AddEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmailView.swift; sourceTree = "<group>"; };
 		E89087592BE2271C000AA2B4 /* IGTextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGTextFieldModifier.swift; sourceTree = "<group>"; };
@@ -64,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E83A40992BEE3ECF00F16458 /* Photos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,8 +87,17 @@
 			isa = PBXGroup;
 			children = (
 				E83A40832BECCB4F00F16458 /* UserProfileViewModel.swift */,
+				E83A40932BEE2E6400F16458 /* UploadPostViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E83A40972BEE3ECE00F16458 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E83A40982BEE3ECF00F16458 /* Photos.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		E8F9C4E82BE0B08A002EC81D = {
@@ -83,6 +105,7 @@
 			children = (
 				E8F9C4F32BE0B08A002EC81D /* InstagramTutorial */,
 				E8F9C4F22BE0B08A002EC81D /* Products */,
+				E83A40972BEE3ECE00F16458 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -222,6 +245,10 @@
 		E8F9C50E2BE0B325002EC81D /* UploadPost */ = {
 			isa = PBXGroup;
 			children = (
+				E83A40892BEE002900F16458 /* ImageSelectionView.swift */,
+				E83A408B2BEE052B00F16458 /* UploadPostView.swift */,
+				E83A40952BEE3C6C00F16458 /* PhotoLibraryView.swift */,
+				E83A409A2BEE400500F16458 /* PhotoView.swift */,
 			);
 			path = UploadPost;
 			sourceTree = "<group>";
@@ -307,20 +334,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8F9C5192BE0E238002EC81D /* FeedCell.swift in Sources */,
+				E83A409B2BEE400500F16458 /* PhotoView.swift in Sources */,
 				E89087582BE224D7000AA2B4 /* AddEmailView.swift in Sources */,
 				E8F9C5122BE0B63A002EC81D /* ProfileView.swift in Sources */,
+				E83A408A2BEE002900F16458 /* ImageSelectionView.swift in Sources */,
 				E8F9C4F72BE0B08A002EC81D /* ContentView.swift in Sources */,
 				E83A40882BEDFE5E00F16458 /* ProfileHeaderView.swift in Sources */,
 				E83A407F2BECA41200F16458 /* Post.swift in Sources */,
 				E89087562BE216BE000AA2B4 /* LoginView.swift in Sources */,
 				E83A407D2BEC9B8900F16458 /* CurrentUserProfileView.swift in Sources */,
 				E8F9C4F52BE0B08A002EC81D /* InstagramTutorialApp.swift in Sources */,
+				E83A40962BEE3C6C00F16458 /* PhotoLibraryView.swift in Sources */,
 				E83A40862BECCED500F16458 /* PostGridView.swift in Sources */,
+				E83A40942BEE2E6400F16458 /* UploadPostViewModel.swift in Sources */,
 				E890875C2BE22824000AA2B4 /* CreateUsernameView.swift in Sources */,
 				E89087602BE23CA9000AA2B4 /* CompletsSignUpView.swift in Sources */,
 				E83A407B2BEC962300F16458 /* User.swift in Sources */,
 				E8F9C51B2BE0EB9C002EC81D /* SearchView.swift in Sources */,
 				E890875A2BE2271C000AA2B4 /* IGTextFieldModifier.swift in Sources */,
+				E83A408C2BEE052B00F16458 /* UploadPostView.swift in Sources */,
 				E83A40842BECCB4F00F16458 /* UserProfileViewModel.swift in Sources */,
 				E8F9C5152BE0BC37002EC81D /* UserStatView.swift in Sources */,
 				E83A40812BECB5C900F16458 /* UserButtonOptionView.swift in Sources */,
@@ -463,6 +495,8 @@
 				DEVELOPMENT_TEAM = 52YSN62MCL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "앨범 쓰기 권한을 열어주세요.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "앨범 접근 허가가 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -492,6 +526,8 @@
 				DEVELOPMENT_TEAM = 52YSN62MCL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "앨범 쓰기 권한을 열어주세요.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "앨범 접근 허가가 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
