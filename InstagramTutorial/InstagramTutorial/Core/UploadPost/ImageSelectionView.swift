@@ -19,7 +19,6 @@ struct ImageSelectionView: View {
                 // action tool bar
                 HStack {
                     Button {
-                        viewModel.selectedImage = nil
                         viewModel.postImage = nil
                         tabIndex = 0
                         print("Cancel upload")
@@ -80,10 +79,24 @@ struct ImageSelectionView: View {
                     Spacer()
                     
                     Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                        /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
+                        Circle()
+                            .frame(width: 30,height: 30)
+                            .foregroundColor(Color.black)
+                            .overlay{
+                                Image(systemName: "square.on.square")
+                                    .foregroundColor(.white)
+                            }
+                            .overlay(Circle().strokeBorder(Color.gray, lineWidth: 1))
                     })
                     Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                        /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
+                        Circle()
+                            .frame(width: 30,height: 30)
+                            .foregroundColor(Color.black)
+                            .overlay{
+                                Image(systemName: "camera")
+                                    .foregroundColor(.white)
+                            }
+                            .overlay(Circle().strokeBorder(Color.gray, lineWidth: 1))
                     })
                 }
                 .padding(.horizontal)
