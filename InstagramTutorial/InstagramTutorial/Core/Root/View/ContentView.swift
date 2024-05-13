@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var viewModel = ContentViewModel()
     @StateObject var registrationViewModel = RegistrationViewModel()
+    @StateObject var uploadPostViewModel = UploadPostViewModel()
     var body: some View {
         Group {
             if viewModel.userSession == nil {
@@ -17,6 +18,7 @@ struct ContentView: View {
                     .environmentObject(registrationViewModel)
             } else {
                 MainTabView()
+                    .environmentObject(uploadPostViewModel)
             }
         }
     }

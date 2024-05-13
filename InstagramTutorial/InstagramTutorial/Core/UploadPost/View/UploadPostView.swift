@@ -9,10 +9,8 @@ import SwiftUI
 
 struct UploadPostView: View {
     @State var caption = ""
-    @Binding var selectedPhoto: UIImage?
+    @EnvironmentObject var uploadPostViewModel: UploadPostViewModel
     @Environment(\.dismiss) var dismiss
-    
-    private let imageDimension: CGFloat = (UIScreen.main.bounds.width / 1.7) - 1
     
     var body: some View {
         VStack {
@@ -39,15 +37,14 @@ struct UploadPostView: View {
             
             ScrollView {
                 
-                if let image = selectedPhoto {
+                if let image = uploadPostViewModel.postImage {
                     Image(uiImage: image)
                         .resizable()
                         .scaledToFill()
-                        .frame(width: imageDimension, height: imageDimension)
+                        .frame(width: uploadPostViewModel.imageDimension, height: uploadPostViewModel.imageDimension)
                         .clipShape(RoundedRectangle(cornerRadius: 9))
                         .padding(.top)
                 }
-                
                 
                 HStack(spacing: 8) {
                     TextField("문구를 작성하거나 설문을 추가하세요...", text: $caption, axis: .vertical)
@@ -79,5 +76,5 @@ struct UploadPostView: View {
 }
 
 #Preview {
-    UploadPostView(selectedPhoto: .constant(nil))
+    UploadPostView()
 }

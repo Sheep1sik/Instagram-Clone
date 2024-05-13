@@ -9,8 +9,7 @@ import SwiftUI
 import PhotosUI
 
 struct ImageSelectionView: View {
-    @State private var selectedPhoto: UIImage?
-    @StateObject var viewModel = UploadPostViewModel()
+    @EnvironmentObject var uploadPostViewModel: UploadPostViewModel
     @Binding var tabIndex: Int
     
     var body: some View {
@@ -19,7 +18,6 @@ struct ImageSelectionView: View {
                 // action tool bar
                 HStack {
                     Button {
-                        viewModel.postImage = nil
                         tabIndex = 0
                         print("Cancel upload")
                     } label: {
@@ -38,7 +36,7 @@ struct ImageSelectionView: View {
                     Spacer()
                     
                     NavigationLink (
-                        destination: UploadPostView(selectedPhoto: $selectedPhoto)
+                        destination: UploadPostView()
                             .navigationBarBackButtonHidden(),
                         label: {
                             Text("다음")
@@ -51,8 +49,8 @@ struct ImageSelectionView: View {
                 
                 // postimage and caption
                 HStack {
-                    if let selectedPhoto = selectedPhoto {
-                        Image(uiImage: selectedPhoto)
+                    if let image = uploadPostViewModel.postImage {
+                        Image(uiImage: image)
                             .resizable()
                             .frame(width: 300,height: 350)
                             .clipped()
@@ -102,7 +100,7 @@ struct ImageSelectionView: View {
                 .padding(.horizontal)
                 .padding(.vertical)
                 
-                PhotoLibraryView(selectedPhoto: $selectedPhoto, viewModel: viewModel)
+                PhotoLibraryView()
         
             }
             .photosPickerStyle(.presentation)

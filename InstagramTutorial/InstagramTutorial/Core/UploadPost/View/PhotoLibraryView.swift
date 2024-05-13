@@ -9,8 +9,7 @@ import SwiftUI
 import Photos
 
 struct PhotoLibraryView: View {
-    @Binding var selectedPhoto: UIImage?
-    @StateObject var viewModel = UploadPostViewModel()
+    @EnvironmentObject var uploadPostViewModel: UploadPostViewModel
     
     private let gridItems: [GridItem] = [
         .init(.flexible(), spacing: 1),
@@ -22,9 +21,9 @@ struct PhotoLibraryView: View {
     var body: some View {
         ScrollView {
             LazyVGrid(columns: gridItems, spacing: 1) {
-                ForEach(viewModel.photos, id: \.self) { asset in
+                ForEach(uploadPostViewModel.photos, id: \.self) { asset in
                     Button(action: {
-                        convertAssetToImage(asset)
+                        uploadPostViewModel.convertAssetToImage(asset)
                     }, label: {
                         PhotoView(asset: asset)
                     })
@@ -32,23 +31,13 @@ struct PhotoLibraryView: View {
             }
         }
         .onAppear {
-            viewModel.requestPhotos()
-            if let firstPhoto = viewModel.photos.first {
-                convertAssetToImage(firstPhoto)
+            uploadPostViewModel.requestPhotos()
+            if let firstPhoto = uploadPostViewModel.photos.first {
+                uploadPostViewModel.convertAssetToImage(firstPhoto)
             }
         }
     }
     
-    func convertAssetToImage(_ asset: PHAsset) {
-            let manager = PHImageManager.default()
-            let options = PHImageRequestOptions()
-            options.isSynchronous = true
-            manager.requestImage(for: asset, targetSize: CGSize(width: 300, height: 350), contentMode: .aspectFill, options: options) { image, _ in
-                if let image = image {
-                    selectedPhoto = image
-                }
-            }
-        }
 }
 
 #Preview {
@@ -57,5 +46,5 @@ struct PhotoLibraryView: View {
                 PHAsset(), PHAsset(), PHAsset(), PHAsset(),
                 PHAsset(), PHAsset(), PHAsset(), PHAsset()
             ]
-    return PhotoLibraryView(selectedPhoto: .constant(nil), viewModel: viewModel)
+    return PhotoLibraryView()
 }

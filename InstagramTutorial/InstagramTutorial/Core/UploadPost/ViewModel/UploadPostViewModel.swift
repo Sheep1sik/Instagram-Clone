@@ -10,22 +10,17 @@ import PhotosUI
 import SwiftUI
 import Photos
 
-@MainActor
 class UploadPostViewModel: ObservableObject {
     
-    @Published var postImage: Image?
+    @Published var postImage: UIImage?
     @Published var photos = [PHAsset]()
     
-    func loadImage(fromItem item: PhotosPickerItem?) async {
-        guard let item = item else { return }
-        
-        guard let data = try? await item.loadTransferable(type: Data.self) else { return }
-        guard let uiImage = UIImage(data: data) else { return }
-        self.postImage = Image(uiImage: uiImage)
-    }
+    
+    let imageDimension: CGFloat = (UIScreen.main.bounds.width / 1.7) - 1
     
     func requestPhotos() {
-        PHPhotoLibrary.requestAuthorization { status in
+        PHPhotoLibrary.requestAuthorization { [weak self] status in
+            guard let self = self else { return }
             switch status {
             case .authorized:
                 let fetchOptions = PHFetchOptions()
@@ -42,6 +37,31 @@ class UploadPostViewModel: ObservableObject {
         }
     }
     
+    @MainActor
+        func loadImage(asset: PHAsset) -> UIImage {
+            let manager = PHImageManager.default()
+            let options = PHImageRequestOptions()
+            var thumbnail = UIImage()
+            options.isSynchronous = true
+            manager.requestImage(for: asset, targetSize: CGSize(width: imageDimension, height: imageDimension), contentMode: .aspectFill, options: options) { image, _ in
+                if let image = image {
+                    thumbnail = image
+                }
+            }
+            return thumbnail
+        }
+    
+    @MainActor
+    func convertAssetToImage(_ asset: PHAsset) {
+        let manager = PHImageManager.default()
+        let options = PHImageRequestOptions()
+        options.isSynchronous = true
+        manager.requestImage(for: asset, targetSize: CGSize(width: 300, height: 350), contentMode: .aspectFill, options: options) { image, _ in
+            if let image = image {
+                self.postImage = image
+            }
+        }
+    }
     
 }
 
