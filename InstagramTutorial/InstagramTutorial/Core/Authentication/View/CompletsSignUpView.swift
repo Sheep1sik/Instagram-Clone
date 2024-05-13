@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CompletsSignUpView: View {
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var viewModel: RegistrationViewModel
     
     var body: some View {
         VStack(spacing: 12) {
@@ -19,7 +20,7 @@ struct CompletsSignUpView: View {
                 .font(.title3)
                 .fontWeight(.bold)
             
-            Text("sheep1sik")
+            Text("\(viewModel.username)")
                 .font(.title3)
                 .fontWeight(.bold)
             
@@ -30,6 +31,7 @@ struct CompletsSignUpView: View {
                 .padding(.horizontal, 24)
             
             Button {
+                Task { try await viewModel.creatUser() }
                 print("Complete sign up")
             } label: {
                 Text("다음")
