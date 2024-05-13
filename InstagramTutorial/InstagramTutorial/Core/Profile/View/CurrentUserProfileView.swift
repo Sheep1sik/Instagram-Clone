@@ -30,7 +30,9 @@ struct CurrentUserProfileView: View {
             } //: SCROLL
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing, content: {
-                    Button(action: {}, label: {
+                    Button(action: {
+                        AuthService.shared.signout()
+                    }, label: {
                         Image(systemName: "line.3.horizontal")
                             .foregroundColor(.black)
                     })
