@@ -108,6 +108,7 @@ struct ImageSelectionView: View {
             .photosPickerStyle(.presentation)
             .background(Color.black)
         }
+        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
     }
 }
 

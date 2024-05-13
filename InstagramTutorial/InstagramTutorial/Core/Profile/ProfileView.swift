@@ -29,7 +29,9 @@ struct ProfileView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing, content: {
-                    Button(action: {}, label: {
+                    Button(action: {
+                        
+                    }, label: {
                         Image(systemName: "line.3.horizontal")
                             .foregroundColor(.black)
                     })
