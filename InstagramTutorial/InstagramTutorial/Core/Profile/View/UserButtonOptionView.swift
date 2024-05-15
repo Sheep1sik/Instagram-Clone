@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct UserButtonOptionView: View {
-    @ObservedObject var userViewModel: UserProfileViewModel
+    
     var body: some View {
-        if userViewModel.user == User.MOCK_USERS[0] {
+        if true {
             Button {
                 
             } label: {
@@ -66,10 +66,8 @@ struct UserButtonOptionView: View {
         } else {
             HStack {
                 Button {
-                    userViewModel.followUser()
-                    print(userViewModel.user.userFollow)
                 } label: {
-                    if userViewModel.user.userFollow {
+                    if true {
                         RoundedRectangle(cornerRadius: 6)
                             .foregroundColor(Color(.systemGray5))
                             .frame(width: 180, height: 32)
@@ -116,5 +114,5 @@ struct UserButtonOptionView: View {
 }
 
 #Preview {
-    UserButtonOptionView(userViewModel: UserProfileViewModel(user: User.MOCK_USERS[1]))
+    UserButtonOptionView()
 }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SearchView: View {
     @State private var searchText = ""
+    @StateObject var viewModel  = SearchViewModel()
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -22,14 +23,15 @@ struct SearchView: View {
                     } //: HSTACK
                     .padding(.horizontal)
                     .padding(.bottom, 10)
-                    ForEach(User.MOCK_USERS) { user in
+                    ForEach(viewModel.users) { user in
                         NavigationLink(value: user) {
                             HStack {
-                                Image(user.profileImageUrl ?? "")
+                                Image(systemName: "person.circle")
                                     .resizable()
                                     .scaledToFill()
                                     .frame(width: 40, height: 40)
                                     .clipShape(Circle())
+                                    .foregroundColor(.gray)
                                 
                                 VStack(alignment: .leading) {
                                     Text(user.username)

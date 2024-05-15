@@ -10,12 +10,14 @@ import SwiftUI
 struct ProfileView: View {
     
     let user: User
+    @Environment(\.dismiss) var dismiss
     
     var posts: [Post] {
         return Post.MOCK_POSTS.filter({$0.user?.username == user.username})
     }
-        
+    
     var body: some View {
+        NavigationView {
             ScrollView {
                 // header
                 ProfileHeaderView(user: user)
@@ -29,15 +31,15 @@ struct ProfileView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing, content: {
-                    Button(action: {
-                        
-                    }, label: {
-                        Image(systemName: "line.3.horizontal")
-                            .foregroundColor(.black)
-                    })
+                    Image(systemName: "line.3.horizontal")
+                        .foregroundColor(.black)
+                        .onTapGesture {
+                            dismiss()
+                        }
                 })
             }
-            .padding(.top, 10)
+        }
+        .padding(.top, 10)
     }
 }
 

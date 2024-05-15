@@ -42,6 +42,10 @@ struct ProfileHeaderView: View {
                     Text(fullname)
                         .font(.footnote)
                         .fontWeight(.semibold)
+                } else {
+                    Text(user.username)
+                        .font(.footnote)
+                        .fontWeight(.semibold)
                 }
                 if let bio = user.bio {
                     Text(bio)
@@ -53,7 +57,7 @@ struct ProfileHeaderView: View {
             
             // action button
             
-            UserButtonOptionView(userViewModel: UserProfileViewModel(user: user))
+            UserButtonOptionView()
             
             Divider()
         }

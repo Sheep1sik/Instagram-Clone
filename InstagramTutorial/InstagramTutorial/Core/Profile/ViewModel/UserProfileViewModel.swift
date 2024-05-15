@@ -7,16 +7,16 @@
 
 import SwiftUI
 
-class UserProfileViewModel: ObservableObject {
-    @Published var user: User
-
-    init(user: User) {
-        self.user = user
-    }
-
-    func followUser() {
-        // 사용자를 팔로우하는 로직 구현
-        user.userFollow.toggle()
-        objectWillChange.send()
-    }
-}
+//class UserProfileViewModel: ObservableObject {
+//    @Published var user: User
+//
+//    init(user: User) {
+//        self.user = user
+//    }
+//
+//    func followUser() {
+//        // 사용자를 팔로우하는 로직 구현
+//        user.userFollow.toggle()
+//        objectWillChange.send()
+//    }
+//}
