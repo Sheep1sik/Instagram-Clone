@@ -17,27 +17,25 @@ struct ProfileView: View {
     }
     
     var body: some View {
-        NavigationView {
-            ScrollView {
-                // header
-                ProfileHeaderView(user: user)
-                // post grid view
-                
-                PostGridView(posts: posts)
-                
-                
-            } //: SCROLL
-            .navigationTitle(user.username)
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing, content: {
-                    Image(systemName: "line.3.horizontal")
-                        .foregroundColor(.black)
-                        .onTapGesture {
-                            dismiss()
-                        }
-                })
-            }
+        ScrollView {
+            // header
+            ProfileHeaderView(user: user)
+            // post grid view
+            
+            PostGridView(posts: posts)
+            
+            
+        } //: SCROLL
+        .navigationTitle(user.username)
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing, content: {
+                Image(systemName: "line.3.horizontal")
+                    .foregroundColor(.black)
+                    .onTapGesture {
+                        dismiss()
+                    }
+            })
         }
         .padding(.top, 10)
     }

@@ -39,7 +39,7 @@ struct CurrentUserProfileView: View {
                 })
                 
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Text("sheep1sik")
+                    Text(user.username)
                         .font(.title2)
                         .fontWeight(.bold)
                 }

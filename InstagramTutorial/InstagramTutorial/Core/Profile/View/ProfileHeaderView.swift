@@ -10,6 +10,7 @@ import SwiftUI
 struct ProfileHeaderView: View {
     let user: User
     
+    
     var posts: [Post] {
         return Post.MOCK_POSTS.filter({$0.user?.username == user.username})
     }
@@ -18,11 +19,7 @@ struct ProfileHeaderView: View {
         VStack(spacing: 10) {
             // pic and stats
             HStack {
-                Image(user.profileImageUrl ?? "")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 80, height: 80)
-                    .clipShape(Circle())
+                CircularProfileImageView(user: user, size: .large)
                 
                 Spacer()
                 
@@ -57,7 +54,7 @@ struct ProfileHeaderView: View {
             
             // action button
             
-            UserButtonOptionView()
+            UserButtonOptionView(user: user)
             
             Divider()
         }

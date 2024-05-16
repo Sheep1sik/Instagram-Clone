@@ -26,12 +26,7 @@ struct SearchView: View {
                     ForEach(viewModel.users) { user in
                         NavigationLink(value: user) {
                             HStack {
-                                Image(systemName: "person.circle")
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: 40, height: 40)
-                                    .clipShape(Circle())
-                                    .foregroundColor(.gray)
+                                CircularProfileImageView(user: user, size: .xSmall)
                                 
                                 VStack(alignment: .leading) {
                                     Text(user.username)
@@ -56,15 +51,6 @@ struct SearchView: View {
             } //: SCROLL
             .navigationDestination(for: User.self, destination: { user in
                 ProfileView(user: user)
-                    .navigationBarBackButtonHidden()
-                    .navigationBarItems(leading:
-                        Button(action: {
-                        presentationMode.wrappedValue.dismiss()
-                    }) {
-                        Image(systemName: "chevron.left")
-                            .imageScale(.large)
-                            .foregroundColor(.black)
-                    })
             })
         } //: NAVIGATION
     }

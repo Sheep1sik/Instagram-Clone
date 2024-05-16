@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct UserButtonOptionView: View {
+    @State private var showEditProfile = false
+    
+    let user: User
     
     var body: some View {
-        if true {
+        if(user.isCurrentUser) {
             Button {
                 
             } label: {
@@ -34,40 +37,45 @@ struct UserButtonOptionView: View {
                         }
                     }
             } //: BUTTON
-            
-            // action button
-            HStack {
-                Button {
+            if(user.isCurrentUser) {
+                // action button
+                HStack {
+                    Button {
+                        showEditProfile.toggle()
+                    } label: {
+                        RoundedRectangle(cornerRadius: 6)
+                            .foregroundColor(Color(.systemGray5))
+                            .frame(width: 180, height: 32)
+                            .overlay {
+                                Text("프로필 편집")
+                                    .font(.subheadline)
+                                    .foregroundColor(.black)
+                            }
+                    } //: BUTTON
+                    .fullScreenCover(isPresented: $showEditProfile) {
+                        EditProfileView(user: user)
+                    }
                     
-                } label: {
-                    RoundedRectangle(cornerRadius: 6)
-                        .foregroundColor(Color(.systemGray5))
-                        .frame(width: 180, height: 32)
-                        .overlay {
-                            Text("프로필 편집")
-                                .font(.subheadline)
-                                .foregroundColor(.black)
-                        }
-                } //: BUTTON
-                
-                Button {
-                    
-                } label: {
-                    RoundedRectangle(cornerRadius: 6)
-                        .foregroundColor(Color(.systemGray5))
-                        .frame(width: 180, height: 32)
-                        .overlay {
-                            Text("프로필 공유")
-                                .font(.subheadline)
-                                .foregroundColor(.black)
-                        }
-                } //: BUTTON
+                    Button {
+                        
+                    } label: {
+                        RoundedRectangle(cornerRadius: 6)
+                            .foregroundColor(Color(.systemGray5))
+                            .frame(width: 180, height: 32)
+                            .overlay {
+                                Text("프로필 공유")
+                                    .font(.subheadline)
+                                    .foregroundColor(.black)
+                            }
+                    } //: BUTTON
+                }
             }
         } else {
             HStack {
                 Button {
+
                 } label: {
-                    if true {
+                    if user.isCurrentUser {
                         RoundedRectangle(cornerRadius: 6)
                             .foregroundColor(Color(.systemGray5))
                             .frame(width: 180, height: 32)
@@ -94,6 +102,7 @@ struct UserButtonOptionView: View {
                                     .fontWeight(.bold)
                                     .foregroundColor(.white)
                             }
+                        
                     }
                 } //: BUTTON
                 Button {
@@ -114,5 +123,5 @@ struct UserButtonOptionView: View {
 }
 
 #Preview {
-    UserButtonOptionView()
+    UserButtonOptionView(user: User.MOCK_USERS[0])
 }
