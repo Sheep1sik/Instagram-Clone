@@ -36,7 +36,7 @@ struct ImageSelectionView: View {
                     Spacer()
                     
                     NavigationLink (
-                        destination: UploadPostView()
+                        destination: UploadPostView(tabIndex: $tabIndex)
                             .navigationBarBackButtonHidden(),
                         label: {
                             Text("다음")

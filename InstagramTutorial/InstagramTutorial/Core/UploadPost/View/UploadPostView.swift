@@ -9,7 +9,10 @@ import SwiftUI
 
 struct UploadPostView: View {
     @State var caption = ""
+    @State var likesPublic = false
+    @State var commentsEnabled = false
     @EnvironmentObject var uploadPostViewModel: UploadPostViewModel
+    @Binding var tabIndex: Int
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -20,6 +23,9 @@ struct UploadPostView: View {
                         .imageScale(.large)
                         .foregroundColor(.black)
                         .onTapGesture {
+                            caption = ""
+                            likesPublic = false
+                            commentsEnabled = false
                             dismiss()
                         }
                 })
@@ -50,14 +56,59 @@ struct UploadPostView: View {
                     TextField("문구를 작성하거나 설문을 추가하세요...", text: $caption, axis: .vertical)
                         .padding(.top)
                 }
+                .padding(.bottom, 50)
+                
+                
+                VStack {
+                    
+                    Divider()
+                    
+                    HStack {
+                        Text("좋아요 수 및 조회수")
+                            .font(.headline)
+                            .fontWeight(.bold)
+                        
+                        Spacer()
+                    }
+                    
+                    HStack {
+                        Toggle("이 게시물의 좋아요 수 및 조회수 숨기기", isOn: $likesPublic)
+                            .toggleStyle(SwitchToggleStyle(tint: Color(.systemBlue)))
+                        
+                    }
+                    
+                    Divider()
+                    
+                    HStack {
+                        Text("댓글")
+                            .font(.headline)
+                            .fontWeight(.bold)
+                        
+                        Spacer()
+                    }
+                    
+                    HStack {
+                        Toggle("댓글 기능 해제", isOn: $commentsEnabled)
+                            .toggleStyle(SwitchToggleStyle(tint: Color(.systemBlue)))
+                        
+                    }
+                }
             }
-            
-            
-            Spacer()
+                
             
             Divider()
             
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+            Button(action: {
+                Task {
+                    try await uploadPostViewModel.uploadPost(caption: caption, likesPublic: likesPublic, commentsEnabled: commentsEnabled)
+                    
+                    dismiss()
+                    caption = ""
+                    likesPublic = false
+                    commentsEnabled = false
+                    tabIndex = 0
+                }
+            }, label: {
                 RoundedRectangle(cornerRadius: 7)
                     .frame(width: 300, height: 33)
                     .foregroundColor(Color(.systemBlue))
@@ -76,5 +127,5 @@ struct UploadPostView: View {
 }
 
 #Preview {
-    UploadPostView()
+    UploadPostView(tabIndex: .constant(0))
 }

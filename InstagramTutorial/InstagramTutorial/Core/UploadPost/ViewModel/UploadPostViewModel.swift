@@ -9,6 +9,7 @@ import Foundation
 import PhotosUI
 import SwiftUI
 import Photos
+import Firebase
 
 class UploadPostViewModel: ObservableObject {
     
@@ -61,6 +62,19 @@ class UploadPostViewModel: ObservableObject {
                 self.postImage = image
             }
         }
+    }
+    
+    func uploadPost(caption: String, likesPublic: Bool, commentsEnabled: Bool) async throws {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        guard let uiImage = postImage else { return }
+        
+        let postRef = Firestore.firestore().collection("posts").document()
+        guard let imageUrl = try await ImageUploader.uploadImage(image: uiImage) else { return }
+        let post = Post(id: postRef.documentID, ownerUid: uid, caption: caption, likes: 0, likesPublic: likesPublic, commentsEnabled: commentsEnabled, imageUrl: imageUrl, timestamp: Timestamp())
+        
+        guard let encodedPost = try? Firestore.Encoder().encode(post) else { return }
+        
+        try await postRef.setData(encodedPost)
     }
     
 }

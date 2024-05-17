@@ -36,6 +36,9 @@
 		E8589FF42BF5ECBB0095F717 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8589FF32BF5ECBB0095F717 /* ImageUploader.swift */; };
 		E8589FF72BF5F3450095F717 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E8589FF62BF5F3450095F717 /* Kingfisher */; };
 		E8589FF92BF5F37E0095F717 /* CircularProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8589FF82BF5F37E0095F717 /* CircularProfileImageView.swift */; };
+		E8589FFD2BF622620095F717 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8589FFC2BF622620095F717 /* FeedViewModel.swift */; };
+		E8589FFF2BF721870095F717 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8589FFE2BF721860095F717 /* PostService.swift */; };
+		E858A0032BF72FA40095F717 /* PostGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E858A0022BF72FA40095F717 /* PostGridViewModel.swift */; };
 		E89087562BE216BE000AA2B4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89087552BE216BE000AA2B4 /* LoginView.swift */; };
 		E89087582BE224D7000AA2B4 /* AddEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89087572BE224D7000AA2B4 /* AddEmailView.swift */; };
 		E890875A2BE2271C000AA2B4 /* IGTextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89087592BE2271C000AA2B4 /* IGTextFieldModifier.swift */; };
@@ -79,6 +82,9 @@
 		E8589FF12BF5E3550095F717 /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
 		E8589FF32BF5ECBB0095F717 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		E8589FF82BF5F37E0095F717 /* CircularProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProfileImageView.swift; sourceTree = "<group>"; };
+		E8589FFC2BF622620095F717 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		E8589FFE2BF721860095F717 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
+		E858A0022BF72FA40095F717 /* PostGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGridViewModel.swift; sourceTree = "<group>"; };
 		E89087552BE216BE000AA2B4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E89087572BE224D7000AA2B4 /* AddEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmailView.swift; sourceTree = "<group>"; };
 		E89087592BE2271C000AA2B4 /* IGTextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGTextFieldModifier.swift; sourceTree = "<group>"; };
@@ -224,6 +230,42 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		E8589FFA2BF6223C0095F717 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E8F9C5162BE0E225002EC81D /* FeedView.swift */,
+				E8F9C5182BE0E238002EC81D /* FeedCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E8589FFB2BF622440095F717 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E8589FFC2BF622620095F717 /* FeedViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E858A0002BF72F750095F717 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E8F9C5142BE0BC37002EC81D /* UserStatView.swift */,
+				E89087592BE2271C000AA2B4 /* IGTextFieldModifier.swift */,
+				E83A40852BECCED500F16458 /* PostGridView.swift */,
+				E8589FF82BF5F37E0095F717 /* CircularProfileImageView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E858A0012BF72F7B0095F717 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E858A0022BF72FA40095F717 /* PostGridViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		E8F9C4E82BE0B08A002EC81D = {
 			isa = PBXGroup;
 			children = (
@@ -308,6 +350,7 @@
 			children = (
 				E8589FE72BF4A34F0095F717 /* UserService.swift */,
 				E8589FF32BF5ECBB0095F717 /* ImageUploader.swift */,
+				E8589FFE2BF721860095F717 /* PostService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -325,8 +368,8 @@
 		E8F9C5092BE0B295002EC81D /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				E8F9C5162BE0E225002EC81D /* FeedView.swift */,
-				E8F9C5182BE0E238002EC81D /* FeedCell.swift */,
+				E8589FFB2BF622440095F717 /* ViewModel */,
+				E8589FFA2BF6223C0095F717 /* View */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -378,10 +421,8 @@
 		E8F9C5132BE0BBF1002EC81D /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				E8F9C5142BE0BC37002EC81D /* UserStatView.swift */,
-				E89087592BE2271C000AA2B4 /* IGTextFieldModifier.swift */,
-				E83A40852BECCED500F16458 /* PostGridView.swift */,
-				E8589FF82BF5F37E0095F717 /* CircularProfileImageView.swift */,
+				E858A0012BF72F7B0095F717 /* ViewModel */,
+				E858A0002BF72F750095F717 /* View */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -474,6 +515,7 @@
 				E89087582BE224D7000AA2B4 /* AddEmailView.swift in Sources */,
 				E8589FEE2BF5DB8E0095F717 /* EditProfileView.swift in Sources */,
 				E8589FE42BF1FE890095F717 /* RegistrationViewModel.swift in Sources */,
+				E8589FFD2BF622620095F717 /* FeedViewModel.swift in Sources */,
 				E8F9C5122BE0B63A002EC81D /* ProfileView.swift in Sources */,
 				E83A408A2BEE002900F16458 /* ImageSelectionView.swift in Sources */,
 				E8589FF42BF5ECBB0095F717 /* ImageUploader.swift in Sources */,
@@ -492,6 +534,7 @@
 				E890875C2BE22824000AA2B4 /* CreateUsernameView.swift in Sources */,
 				E8589FEC2BF4A6200095F717 /* SearchViewModel.swift in Sources */,
 				E89087602BE23CA9000AA2B4 /* CompletsSignUpView.swift in Sources */,
+				E858A0032BF72FA40095F717 /* PostGridViewModel.swift in Sources */,
 				E83A407B2BEC962300F16458 /* User.swift in Sources */,
 				E8F9C51B2BE0EB9C002EC81D /* SearchView.swift in Sources */,
 				E890875A2BE2271C000AA2B4 /* IGTextFieldModifier.swift in Sources */,
@@ -500,6 +543,7 @@
 				E8589FDA2BF1EC6D0095F717 /* AuthService.swift in Sources */,
 				E8F9C5152BE0BC37002EC81D /* UserStatView.swift in Sources */,
 				E83A40812BECB5C900F16458 /* UserButtonOptionView.swift in Sources */,
+				E8589FFF2BF721870095F717 /* PostService.swift in Sources */,
 				E8589FE12BF1F0BC0095F717 /* ContentViewModel.swift in Sources */,
 				E8F9C5172BE0E225002EC81D /* FeedView.swift in Sources */,
 				E8F9C5102BE0B4AE002EC81D /* MainTabView.swift in Sources */,

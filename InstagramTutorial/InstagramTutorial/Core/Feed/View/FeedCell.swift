@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct FeedCell: View {
     let post: Post
@@ -29,7 +30,7 @@ struct FeedCell: View {
             
             // post image
             
-            Image(post.imageUrl)
+            KFImage(URL(string: post.imageUrl))
                 .resizable()
                 .scaledToFill()
                 .frame(height: 400)
@@ -43,7 +44,7 @@ struct FeedCell: View {
                     Image(systemName: "heart")
                         .imageScale(.large)
                 })
-                if post.commentsEnabled {
+                if !post.commentsEnabled {
                     Button(action: {
                         print("Comment on post")
                     }, label: {
@@ -66,7 +67,7 @@ struct FeedCell: View {
             
             HStack {
                 // likes label
-                Text("\(post.commentsEnabled ? String(post.likes) : "여러")명")
+                Text("\(!post.commentsEnabled ? String(post.likes) : "여러")명")
                     .font(.footnote)
                     .fontWeight(.semibold)
                 +
